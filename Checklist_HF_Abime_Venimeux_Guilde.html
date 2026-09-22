@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checklist HF — L’Abîme Venimeux</title>
+<style>
+:root{--bg:#0b0f14;--panel:#121923;--panel2:#17202c;--text:#edf3f8;--muted:#a8b5c2;--line:#2a3645;--accent:#78d5b5;--accent2:#f0c36d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Segoe UI,Arial,sans-serif;line-height:1.45}
+main{max-width:1050px;margin:0 auto;padding:22px}h1{margin:0 0 8px;font-size:clamp(24px,4vw,38px)}h2{margin:0;font-size:19px}
+a{color:#9bd5ff}.badges{display:flex;gap:8px;flex-wrap:wrap}.badge{border:1px solid var(--line);background:var(--panel2);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+.progress-wrap,.note,.card{background:var(--panel);border:1px solid var(--line);border-radius:14px}.progress-wrap{padding:14px;margin:14px 0}.progress-label{display:flex;justify-content:space-between;margin-bottom:8px}
+.progress{height:12px;background:#202b37;border-radius:999px;overflow:hidden}.progress>div{height:100%;width:0;background:var(--accent)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:10px 12px;border-radius:9px;cursor:pointer;font-weight:600}
+.note{border-left:4px solid var(--accent2);padding:12px 14px;margin:16px 0}.grid{display:grid;gap:12px}
+.card{overflow:hidden}.card-head{display:flex;align-items:center;gap:12px;padding:15px;cursor:pointer}.card-head input{width:22px;height:22px}.bossnum{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.ach{color:var(--accent);font-weight:700;font-size:14px;margin-top:2px}details summary{list-style:none}details summary::-webkit-details-marker{display:none}.chev{margin-left:auto;color:var(--muted)}
+.body{border-top:1px solid var(--line);padding:14px 16px 16px}.goal{font-weight:700;margin-bottom:10px}.steps{display:grid;gap:8px;margin:10px 0}
+.step{display:flex;gap:10px;align-items:flex-start;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px}.step input{width:18px;height:18px;margin-top:2px}
+.flow{margin:12px 0;padding:11px;border-radius:10px;border:1px dashed #476072;background:#0f151d;text-align:center;font-weight:700}
+.warn{color:#ffd3d3;background:#2a1518;border:1px solid #5b2b31;border-radius:9px;padding:9px 11px;margin:10px 0}.tip{color:#d7efe7;background:#10211d;border:1px solid #244b40;border-radius:9px;padding:9px 11px;margin:10px 0}
+.sources{font-size:12px;color:var(--muted);margin-top:10px}.sources a{margin-right:10px}textarea{width:100%;min-height:185px;background:#0d131a;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px;font-family:Consolas,monospace}
+small{color:var(--muted)}@media(max-width:650px){main{padding:14px}.actions button{flex:1 1 auto}}
+</style>
+</head>
+<body>
+<main>
+<h1>Checklist — Glory of the Venomous Raider</h1>
+<p>Les 8 hauts faits de <b>L’Abîme Venimeux</b>, un par boss. Tous demandent <b>Normal ou supérieur</b>.</p>
+<div class="badges"><span class="badge">8 boss / 8 HF</span><span class="badge">Conseil : Normal</span><span class="badge">Récompense : Crimson Venomfang</span><span class="badge">Ula’tek : familier Ula’took</span></div>
+
+<div class="progress-wrap"><div class="progress-label"><strong>Progression</strong><span id="count">0 / 8</span></div><div class="progress"><div id="bar"></div></div></div>
+<div class="actions"><button id="openAll">Tout déplier</button><button id="closeAll">Tout replier</button><button id="makeDiscord">Résumé Discord</button><button id="reset">Réinitialiser</button></div>
+
+<div class="note"><b>À savoir :</b> les cases sont enregistrées localement dans le navigateur. Chaque membre peut donc suivre sa progression, mais ce fichier n’est pas synchronisé entre plusieurs personnes.</div>
+
+<section class="grid">
+<details class="card" open><summary class="card-head"><input class="done" type="checkbox"><div><div class="bossnum">Boss 1 — Nek’zali</div><h2>Well, Well, Little Sky</h2><div class="ach">Ramener Kupamanduka dans le Soulcoil Well puis tuer Nek’zali</div></div><div class="chev">›</div></summary>
+<div class="body"><div class="goal">Objectif : envoyer la grenouille Kupamanduka dans le puits central.</div><div class="steps">
+<label class="step"><input type="checkbox"><span>Acheter <b>Balm of Flies</b> au vendeur squelette <b>Forgotten Attendant</b> près de l’entrée.</span></label>
+<label class="step"><input type="checkbox"><span>Trouver Kupamanduka dans la mare de poison avant la salle et utiliser le baume.</span></label>
+<label class="step"><input type="checkbox"><span>L’amener sur la plateforme.</span></label>
+<label class="step"><input type="checkbox"><span>Après le pull, utiliser l’interaction de coup de pied pour la projeter dans le puits central.</span></label>
+<label class="step"><input type="checkbox"><span>Tuer Nek’zali.</span></label></div>
+<div class="flow">Baume → Grenouille → Plateforme → Pull → Coup de pied → PUITS → Kill</div>
+<div class="sources">Sources : <a href="https://www.wowhead.com/ptr/achievement=63418/well-well-little-sky" target="_blank">Wowhead — HF</a><a href="https://www.wowhead.com/npc=268718/forgotten-attendant" target="_blank">Forgotten Attendant</a></div></div></details>
+
+<details class="card"><summary class="card-head"><input class="done" type="checkbox"><div><div class="bossnum">Boss 2 — Sentinelles ensevelies</div><h2>Is Venom Stasis A Joke To You?</h2><div class="ach">Chaque Sentinelle doit récupérer &gt;50 % de ses PV max via Vitriolic Stasis</div></div><div class="chev">›</div></summary>
+<div class="body"><div class="steps">
+<label class="step"><input type="checkbox"><span>Cycle 1 : focus une Sentinelle jusqu’à ~40–45 %, en gardant l’autre nettement plus haute.</span></label>
+<label class="step"><input type="checkbox"><span>À Vitriolic Stasis, laisser la Sentinelle basse récupérer <b>plus de 50 % de ses PV max</b>. Ne pas terminer le mini-jeu trop vite.</span></label>
+<label class="step"><input type="checkbox"><span>Vérifier son critère dans le tracker.</span></label>
+<label class="step"><input type="checkbox"><span>Cycle 2 : faire la même chose avec l’autre Sentinelle.</span></label>
+<label class="step"><input type="checkbox"><span>Quand les deux critères sont validés, finir le boss.</span></label></div>
+<div class="flow">A basse → STASE → heal &gt;50 % → B basse → STASE → heal &gt;50 % → Kill</div>
+<div class="warn">Prenez une marge : le HF demande <b>plus de</b> 50 %, pas exactement 50 %.</div>
+<div class="sources">Source : <a href="https://www.wowhead.com/ptr/achievement=63250/is-venom-stasis-a-joke-to-you" target="_blank">Wowhead — HF + retours live</a></div></div></details>
+
+<details class="card"><summary class="card-head"><input class="done" type="checkbox"><div><div class="bossnum">Boss 3 — Explorateurs perdus</div><h2>Accidental Inclusion</h2><div class="ach">Inclure Hoji dans le combat</div></div><div class="chev">›</div></summary>
+<div class="body"><div class="steps">
+<label class="step"><input type="checkbox"><span>Assigner 1 joueur au <b>Fish Basket</b> près de la rencontre.</span></label>
+<label class="step"><input type="checkbox"><span>Interagir avec le panier et amener Hoji dans la zone du boss.</span></label>
+<label class="step"><input type="checkbox"><span><b>Ne pas utiliser</b> le bouton d’action supplémentaire associé à Hoji.</span></label>
+<label class="step"><input type="checkbox"><span>Pull et tuer les Explorateurs avec Hoji inclus.</span></label></div>
+<div class="flow">Fish Basket → Hoji dans l’arène → PAS d’extra-action → Pull → Kill</div>
+<div class="sources">Sources : <a href="https://warcraft.wiki.gg/wiki/Accidental_Inclusion" target="_blank">Warcraft Wiki</a><a href="https://www.mmo-champion.com/threads/2669433-Glory-of-the-Venomous-Raider-Achievement-Guide?p=54913622&viewfull=1" target="_blank">MMO-Champion — méthode live</a></div></div></details>
+
+<details class="card"><summary class="card-head"><input class="done" type="checkbox"><div><div class="bossnum">Boss 4 — Vashnik</div><h2>Kept You Waiting Huh?</h2><div class="ach">Faire apparaître puis tuer le Solidified Snake Venom</div></div><div class="chev">›</div></summary>
+<div class="body"><div class="goal">Il faut réunir exactement un add <b>violet + orange + petit rouge</b>.</div><div class="steps">
+<label class="step"><input type="checkbox"><span>Conserver un add violet vivant avec un contrôle long.</span></label>
+<label class="step"><input type="checkbox"><span>Tuer le gros rouge pour qu’il se sépare et conserver un petit rouge.</span></label>
+<label class="step"><input type="checkbox"><span>Au cycle suivant, conserver / déplacer un add orange.</span></label>
+<label class="step"><input type="checkbox"><span>Superposer précisément violet + orange + petit rouge.</span></label>
+<label class="step"><input type="checkbox"><span>Tuer le <b>Solidified Snake Venom</b>, puis Vashnik.</span></label></div>
+<div class="flow">VIOLET + ORANGE + PETIT ROUGE → superposition → SOLIDIFIED SNAKE VENOM → Kill add → Kill boss</div>
+<div class="tip">Très pratique : Grip DK + Banish Démoniste. Piège chasseur / Paralysie moine peuvent aider.</div>
+<div class="sources">Sources : <a href="https://www.wowhead.com/ptr/achievement=63397/kept-you-waiting-huh" target="_blank">Wowhead</a><a href="https://www.mmo-champion.com/threads/2669433-Glory-of-the-Venomous-Raider-Achievement-Guide?p=54913622&viewfull=1" target="_blank">MMO-Champion</a></div></div></details>
+
+<details class="card"><summary class="card-head"><input class="done" type="checkbox"><div><div class="bossnum">Boss 5 — Sszorak</div><h2>Jumping Through Hoops</h2><div class="ach">Traverser chaque anneau qui apparaît</div></div><div class="chev">›</div></summary>
+<div class="body"><div class="steps">
+<label class="step"><input type="checkbox"><span>Avant le pull, activer l’<b>Overwhelming Incense</b> à gauche de la porte avant les escaliers.</span></label>
+<label class="step"><input type="checkbox"><span>À chaque <b>Raging Crosswinds</b>, repérer les 3 anneaux.</span></label>
+<label class="step"><input type="checkbox"><span>Assigner idéalement 1 joueur par anneau et se faire projeter à travers.</span></label>
+<label class="step"><input type="checkbox"><span>Répéter jusqu’à validation du tracker, puis tuer Sszorak.</span></label></div>
+<div class="flow">ENCENS → Pull → Crosswinds → 3 joueurs / 3 anneaux → Kill</div>
+<div class="warn">Évitez les collisions / Turbulent Gusts pendant le saut.</div>
+<div class="sources">Source : <a href="https://www.wowhead.com/ptr/achievement=63391/jumping-through-hoops" target="_blank">Wowhead — HF + retours live</a></div></div></details>
+
+<details class="card"><summary class="card-head"><input class="done" type="checkbox"><div><div class="bossnum">Boss 6 — Crochets jumeaux</div><h2>Taking a Bite out of Slime</h2><div class="ach">Nourrir Ithraz avec 4 slimes dans l’ordre exact</div></div><div class="chev">›</div></summary>
+<div class="body"><div class="steps">
+<label class="step"><input type="checkbox"><span><b>Crunchy Appetizer</b> : après les Explorateurs, côté droit, petite île dans le poison.</span></label>
+<label class="step"><input type="checkbox"><span><b>Sumptuous Soup</b> : après le premier boss, côté gauche, dans un creux.</span></label>
+<label class="step"><input type="checkbox"><span><b>Tasty Blob</b> : zone de trash avant Vashnik, dans une fontaine verte.</span></label>
+<label class="step"><input type="checkbox"><span><b>Jiggly Dessert</b> : salle des Crochets jumeaux, corniche à droite.</span></label>
+<label class="step"><input type="checkbox"><span>Pendant Ravenous Feast : <b>Crunchy → Sumptuous → Tasty → Jiggly</b>.</span></label>
+<label class="step"><input type="checkbox"><span>Vérifier le tracker après chaque slime, puis tuer le boss.</span></label></div>
+<div class="flow">1 Crunchy → 2 Sumptuous → 3 Tasty → 4 Jiggly → Kill</div>
+<div class="tip">Les buffs des slimes durent ~60 min et persistent à travers la mort. Les 4 peuvent être répartis sur plusieurs Ravenous Feasts.</div>
+<div class="sources">Sources : <a href="https://www.wowhead.com/ptr/achievement=63656/taking-a-bite-out-of-slime" target="_blank">Wowhead — HF + positions</a><a href="https://www.wowhead.com/spell=1310824/crunchy-appetizer" target="_blank">Crunchy Appetizer</a></div></div></details>
+
+<details class="card"><summary class="card-head"><input class="done" type="checkbox"><div><div class="bossnum">Boss 7 — Autel lové</div><h2>Watch Out Behind You</h2><div class="ach">Tous les joueurs doivent avoir Unnerving Fixation</div></div><div class="chev">›</div></summary>
+<div class="body"><div class="steps">
+<label class="step"><input type="checkbox"><span>Après Dreadmarch, libérer les joueurs contrôlés pour créer des Manifestations of Dread.</span></label>
+<label class="step"><input type="checkbox"><span><b>Ne pas tuer</b> les fantômes avec le frontal du tank.</span></label>
+<label class="step"><input type="checkbox"><span>Les stocker / kiter : tourner le dos les fait avancer, les regarder les fige.</span></label>
+<label class="step"><input type="checkbox"><span>Attendre que <b>tout le raid</b> ait Unnerving Fixation et que le tracker soit validé.</span></label>
+<label class="step"><input type="checkbox"><span>Terminer alors la rencontre.</span></label></div>
+<div class="flow">Dreadmarch → fantômes → LES GARDER → 1 fixation / joueur → tracker OK → Kill</div>
+<div class="warn">Des retours live signalent une limite de fantômes au-delà d’environ 20 joueurs. Évitez un raid très gros pour ce HF.</div>
+<div class="sources">Source : <a href="https://www.wowhead.com/ptr/achievement=63669/watch-out-behind-you" target="_blank">Wowhead — HF + retours live</a></div></div></details>
+
+<details class="card"><summary class="card-head"><input class="done" type="checkbox"><div><div class="bossnum">Boss 8 — Ula’tek</div><h2>No Egg Scramble</h2><div class="ach">Tuer Ula’tek avec le Greasy Hatchling intact</div></div><div class="chev">›</div></summary>
+<div class="body"><div class="steps">
+<label class="step"><input type="checkbox"><span>Assigner au minimum 4 porteurs : A → B → C → D → A…</span></label>
+<label class="step"><input type="checkbox"><span>Récupérer le <b>Greasy Hatchling</b> sur la partie supérieure gauche de l’arène.</span></label>
+<label class="step"><input type="checkbox"><span>Le porteur a actuellement <b>35 s</b>. Le joueur suivant se place à proximité pour récupérer l’œuf lorsqu’il tombe.</span></label>
+<label class="step"><input type="checkbox"><span>Le porteur précédent reçoit <b>Butter Fingers ~60 s</b> et ne peut pas le reprendre tout de suite.</span></label>
+<label class="step"><input type="checkbox"><span>Prévoir la mobilité inter-plateformes : Gate Démoniste, Grip Prêtre, classes mobiles.</span></label>
+<label class="step"><input type="checkbox"><span>Garder l’œuf intact jusqu’à la mort d’Ula’tek.</span></label></div>
+<div class="flow">A 35 s → B 35 s → C → D → A quand Butter Fingers expire → Kill</div>
+<div class="warn">Si l’œuf n’est pas récupéré quand il tombe : HF perdu → reset.</div>
+<div class="tip">Hotfix du 25/08/2026 : durée du Greasy Hatchling portée à <b>35 s</b> (au lieu de 20).</div>
+<div class="sources">Sources : <a href="https://www.wowhead.com/ptr/achievement=63609/no-egg-scramble" target="_blank">Wowhead — HF</a><a href="https://warcraft.wiki.gg/wiki/Ula-Tek" target="_blank">Warcraft Wiki — hotfix</a></div></div></details>
+</section>
+
+<div class="card" style="margin-top:18px"><div class="body">
+<h2>Résumé à coller dans Discord</h2>
+<textarea id="discordText" placeholder="Cliquez sur « Résumé Discord » en haut."></textarea>
+<div class="actions" style="margin-top:8px"><button id="copyText">Copier le résumé</button></div>
+<div id="copyStatus" style="font-size:13px;color:var(--muted);margin-top:6px"></div>
+</div></div>
+
+<p><small>Sources vérifiées le 22/09/2026 : Wowhead, Warcraft Wiki, MMO-Champion. Les conditions officielles du HF priment en cas de hotfix ultérieur.</small></p>
+</main>
+<script>
+(()=>{const key='venomous-raider-checklist-v2',all=[...document.querySelectorAll('input[type=checkbox]')],done=[...document.querySelectorAll('.done')],bar=document.getElementById('bar'),count=document.getElementById('count'),txt=document.getElementById('discordText'),status=document.getElementById('copyStatus');
+function update(){const n=done.filter(x=>x.checked).length;count.textContent=n+' / 8';bar.style.width=(n/8*100)+'%'}
+function save(){try{localStorage.setItem(key,JSON.stringify(all.map(x=>x.checked)))}catch(e){}update()}
+function load(){try{const s=JSON.parse(localStorage.getItem(key)||'null');if(Array.isArray(s))all.forEach((x,i)=>x.checked=!!s[i])}catch(e){}update()}
+all.forEach(x=>x.addEventListener('change',save));
+document.getElementById('openAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=true);
+document.getElementById('closeAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=false);
+document.getElementById('reset').onclick=()=>{if(confirm('Réinitialiser toutes les cases ?')){all.forEach(x=>x.checked=false);save()}};
+function summary(){const n=["Nek’zali — Well, Well, Little Sky","Sentinelles — Is Venom Stasis A Joke To You?","Explorateurs — Accidental Inclusion","Vashnik — Kept You Waiting Huh?","Sszorak — Jumping Through Hoops","Crochets jumeaux — Taking a Bite out of Slime","Autel lové — Watch Out Behind You","Ula’tek — No Egg Scramble"];let a=["**Glory of the Venomous Raider — progression guilde**",""];done.forEach((x,i)=>a.push((x.checked?'✅':'⬜')+' '+(i+1)+'. '+n[i]));a.push('','Progression : **'+done.filter(x=>x.checked).length+'/8**');txt.value=a.join('\n')}
+document.getElementById('makeDiscord').onclick=summary;
+document.getElementById('copyText').onclick=async()=>{if(!txt.value)summary();txt.focus();txt.select();try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(txt.value);else document.execCommand('copy');status.textContent='Résumé copié.'}catch(e){status.textContent='Le texte est sélectionné : faites Ctrl+C.'}};
+load()})();
+</script>
+</body></html>
